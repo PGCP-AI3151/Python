@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    {% if title %}
+        <title>Title</title>
+    {% else %}
+        <title>My Blog App</title>
+    {% endif %}
+</head>
+<body>
+<nav class="navbar mb-4">
+        <div class="container navbar-split-wrapper">
+            <!-- Left Side: Brand Logo -->
+            <div class="navbar-left">
+                <a class="navbar-brand" href="{{ url_for('home') }}">TechBlog</a>
+            </div>
+
+            <!-- Right Side: Navigation Links aligned horizontally -->
+            <div class="navbar-right">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link {% if request.endpoint == 'login' %}active{% endif %}" href="#">Sign In</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary btn-sm text-white text-decoration-none" href="#">Join</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>
+
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

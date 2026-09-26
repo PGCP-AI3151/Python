@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="content-section">
+    <!-- Section Title -->
+    <h2 class="mb-4 fw-bold" style="color: #2d3748;">Latest Articles</h2>
+
+    <!-- Loop through the list of dictionaries -->
+    {% for blog in blog_posts %}
+        <article class="media">
+            <div class="media-body">
+                <!-- Post Title Link -->
+                <div class="article-metadata">
+                    <a href="#">{{ blog.title }}</a>
+                </div>
+
+                <!-- Brief Content Snippet -->
+                <p class="text-secondary small my-2">
+                    {{ blog.content[:140] }}{% if blog.content|length > 140 %}...{% endif %}
+                </p>
+
+                <!-- Footer Info (Author & Date) -->
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                    <small class="text-muted">By <strong>{{ blog.author }}</strong></small>
+                    <small class="text-muted">{{ blog.date_posted }}</small>
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+</div>
+{% endblock %}

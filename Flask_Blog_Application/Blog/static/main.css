@@ -1,0 +1,99 @@
+/* ==========================================================================
+   BLOG POST LOOP STYLES
+   ========================================================================== */
+/* The main wrapper area around your dynamic loop */
+.content-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Individual post block layout */
+.media {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Elevate the box card slightly when hovering */
+.media:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.media-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Article Title styling attributes */
+.article-metadata a {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #2d3748;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.article-metadata a:hover {
+    color: #2b6cb0; /* Changes title to brand blue on hover */
+}
+
+/* Minor typography for metadata row */
+.text-muted {
+    color: #718096 !important;
+    font-size: 0.875rem;
+}
+
+.text-muted strong {
+    color: #4a5568;
+}
+
+
+/* ==========================================================================
+   HORIZONTAL SIMPLE NAVBAR STYLES
+   ========================================================================== */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.75rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color, #2b6cb0) !important;
+}
+
+/* Force horizontal layout structure */
+.navbar-nav {
+    display: flex;
+    flex-direction: row !important; /* Keeps links horizontal on all screen sizes */
+    gap: 0.5rem;
+}
+
+/* Base Link Layout & Design */
+.nav-link {
+    color: var(--text-muted, #718096) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: var(--border-radius, 6px);
+    transition: all var(--transition-speed, 0.2s) ease;
+}
+
+/* 1. Hover State (Triggers on mouse over) */
+.nav-link:hover {
+    color: var(--primary-color, #2b6cb0) !important;
+    background-color: rgba(43, 108, 176, 0.05); /* Soft background tint */
+}
+
+/* 2. Active State (Highlights the current page) */
+.nav-link.active {
+    color: var(--primary-color, #2b6cb0) !important;
+    background-color: rgba(43, 108, 176, 0.1) !important;
+    font-weight: 600;
+}
